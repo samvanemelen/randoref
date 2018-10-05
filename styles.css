@@ -1,0 +1,116 @@
+
+#image {
+	width: 80%;
+	background-color: #F2F3F4;
+}
+
+#sizeSlider {
+	-webkit-appearance: none;  /* Override default CSS styles */
+	appearance: none;
+	width: 50%; /* Full-width */
+	height: 10px; /* Specified height */
+	background: #d3d3d3; /* Grey background */
+	outline: none; /* Remove outline */
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+}
+
+#container {position: relative;}
+#grid_size {width: 40px; text-align: center;}
+
+#grid {
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 80%;
+	height: 100px;
+	margin-left: 10%;
+	margin-right: 10%;
+	display: <table>;
+	border-style: hidden;
+	border-collapse: collapse;
+}
+
+.accordion {
+	background-color: #E0E0E0;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 50%;
+	text-align: center;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+
+.active, .accordion:hover {background-color: #ccc;}
+
+.panel {
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+	overflow: hidden;
+}
+
+.inline{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 15px;
+	width: 15px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 22px;
+}
+
+.switch input {display:none;}
+
+td.bordered {
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+table.menu {
+	border-spacing: 50px 0;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+th {font-weight: normal;}
+body {text-align: center;}
+input:checked + .slider {background-color: #2196F3;}
+input:focus + .slider {box-shadow: 0 0 1px #2196F3;}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(17px);
+	-ms-transform: translateX(17px);
+	transform: translateX(17px);

@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href = "styles.css">
+</head>
+<body>
+
+	<button class = "accordion">advanced search functions</button>
+	<div class = "panel">
+		<p>Search for: <input id = "term" type="text" placeholder="random" style="text-align:center;" onchange= "checkhits()"/></p>
+		<table class = "menu">
+			<tr>
+				<th>
+					<p>Image Quality: <select id="quality">
+						<option value="high">High</option>
+						<option value="medium">Medium</option>
+						<option value="low">Low</option>
+					</select></p>
+					<p>Image Type: <select id="type" onchange= "checkhits()">
+						<option value="all">All</option>
+						<option value="photo">Photo</option>
+						<option value="illustration">Illustration</option>
+						<option value="vector">Vector</option>
+					</select></p>
+				</th>
+				<th>
+					<p>Image Orientation: <select id="orientation" onchange = "checkhits()">
+						<option value="all">All</option>
+						<option value="horizontal">Horizontal</option>
+						<option value="vertical">Vertical</option>
+					</select></p>
+					<p>Dominant Color: <select id="color" onchange= "checkhits()">
+						<option value="all">All</option>
+						<option value="grayscale">Grayscale</option>
+						<option value="transparent">Transparent</option>
+						<option value="red">Red</option>
+						<option value="orange">Orange</option>
+						<option value="yellow">Yellow</option>
+						<option value="green">Green</option>
+						<option value="turquoise">Turquoise</option>
+						<option value="blue">Blue</option>
+						<option value="lilac">Lilac</option>
+						<option value="pink">Pink</option>
+						<option value="white">White</option>
+						<option value="gray">Gray</option>
+						<option value="black">Black</option>
+						<option value="brown">Brown</option>
+					</select></p>
+				</th>
+			</tr>
+		</table>
+	</div>
+
+	<p></p>
+
+	<button class = "accordion">Drawing aids</button>
+	<div class = "panel">
+		<div class = "inline">
+			<p>Display grid: &nbsp</p>
+			<label class="switch">
+				<input type="checkbox" id = "checked" onchange="updategrid()">
+				<span class="slider"></span>
+			</label>
+		</div>
+		<p>Grid size: <input id = "grid_size" type="number" placeholder = "3", step="1" onchange = "updategrid()"></p>
+	</div>
+
+	<p>Adjust size:</p>
+	<p><input type="range" min="1" max="100" value="80" id="sizeSlider"></p>
+
+	<p><button id="button" onclick="update()">Show random image</button><div id = hitscounter></div></p>
+	<div id = "container">
+		<img id = 'image', src = '' onchange = "updategrid()"/>
+		<table id = "grid">
+			<tr>
+				<td class = "bordered"></td>
+				<td class = "bordered"></td>
+				<td class = "bordered"></td>
+			</tr>
+			<tr>
+				<td class = "bordered"></td>
+				<td class = "bordered"></td>
+				<td class = "bordered"></td>
+			</tr>
+			<tr>
+				<td class = "bordered"></td>
+				<td class = "bordered"></td>
+				<td class = "bordered"></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</html>
