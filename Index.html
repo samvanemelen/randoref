@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<title>RandoRef</title>
 <head>
 	<link rel="stylesheet" href = "styles.css">
 </head>
@@ -55,14 +56,31 @@
 
 	<button class = "accordion">Drawing aids</button>
 	<div class = "panel">
-		<div class = "inline">
-			<p>Display grid: &nbsp</p>
-			<label class="switch">
-				<input type="checkbox" id = "checked" onchange="updategrid()">
-				<span class="slider"></span>
-			</label>
-		</div>
-		<p>Grid size: <input id = "grid_size" type="number" placeholder = "3", step="1" onchange = "updategrid()"></p>
+		<table class = "menu">
+			<tr>
+				<td>
+					<div class = "inline">
+						<p>Display grid: &nbsp</p>
+						<label class="switch">
+							<input type="checkbox" id = "checked" onchange="updategrid()">
+							<span class="slider"></span>
+						</label>
+					</div>
+				</td>
+				<td>
+					<p>Grid segments: <input id = "grid_segments" class = "numberbox" type="number" placeholder = "3", step="1" onchange = "updategrid()" min="2"></p>
+				</td>
+				<td>
+					<p>Grid thickness: <input id = "grid_thickness" class = "numberbox" type="number" placeholder = "1", step="1" onchange = "updategrid()" min="1"></p>
+				</td>
+
+			</tr>
+			<tr>
+				<td>Grid color: <input id = "color_picker" type="color", onchange = "updategrid()"></td>
+				<td><button id="button" onclick="updategrid()">Update Grid</button></td>
+			</tr>
+		</table>
+		
 	</div>
 
 	<p>Adjust size:</p>
@@ -70,7 +88,7 @@
 
 	<p><button id="button" onclick="update()">Show random image</button><div id = hitscounter></div></p>
 	<div id = "container">
-		<img id = 'image', src = '' onchange = "updategrid()"/>
+		<img id = 'image', src = ''/>
 		<table id = "grid">
 			<tr>
 				<td class = "bordered"></td>
