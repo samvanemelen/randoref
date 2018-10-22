@@ -17,7 +17,6 @@
 }
 
 #container {position: relative;}
-#grid_size {width: 40px; text-align: center;}
 
 #grid {
 	position: absolute;
@@ -45,6 +44,7 @@
 }
 
 .active, .accordion:hover {background-color: #ccc;}
+.numberbox {width: 40px; text-align: center;}
 
 .panel {
 	padding: 0 18px;
@@ -94,7 +94,7 @@
 .switch input {display:none;}
 
 td.bordered {
-	border: 2px solid black;
+	border: 0px solid black;
 	border-collapse: collapse;
 }
 
@@ -105,6 +105,7 @@ table.menu {
 	text-align: center;
 }
 
+table {table-layout: fixed}
 th {font-weight: normal;}
 body {text-align: center;}
 input:checked + .slider {background-color: #2196F3;}
